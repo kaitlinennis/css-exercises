@@ -7,21 +7,38 @@ body {
   width: 400px;
   background: #fff;
   margin: 16px auto;
+
+  padding: 8px; /* adds a background/padding for container holding the sections of content */
 }
 
 .title {
   background: #e3f4ff;
+
+  font-size: 16px; /* make heading font size smaller */
+  margin-top: 0px; /* get rid of any default margin styling on top of heading */
+  margin-bottom: 8px; /* get rid of any default margin, add custom margin */
+  padding: 8px; /* adds padding between title text and edge of section */
 }
 
 .content {
   background: #e3f4ff;
+
+  margin-bottom: 8px; /* separate content from button section */
+  padding: 16px 8px; /* adds 16px padding on top/bottom, 8px on left/right */
 }
 
 .button-container {
   background: #e3f4ff;
+
+  text-align: center; /* centers text inside div container */
+  padding: 8px; /* adds padding between content and edge of section */
 }
 
 button {
   background: white;
   border: 1px solid #eee;
+
+  display: block; /* change button from inline to block--goes to new line */
+  margin: 0 auto; /* center block element this way (card is given a width already) */
+  padding: 8px 24px; /* adds 8px padding on top/bottom, 24px on left/right */
 }
