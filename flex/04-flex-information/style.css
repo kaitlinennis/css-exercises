@@ -1,5 +1,6 @@
 body {
   font-family: 'Courier New', Courier, monospace;
+  text-align: center; /* centers title and plant item info (image is also an inline elment) */
 }
 
 img {
@@ -10,6 +11,18 @@ img {
 .title {
   font-size: 36px;
   font-weight: 900;
+
+  margin-bottom: 32px; /* adds space between title and the items below it */
+}
+
+.plant-container {
+  display: flex; /* displays plant information items in a row by default */
+  justify-content: center; /* centers the group of plant items horizontally on the page */
+  gap: 52px; /* adds gap between each plant item */
+}
+
+.plant-item {
+  max-width: 200px; /* apply maximum width for each plant item to follow */
 }
 
 /* do not edit this footer */
