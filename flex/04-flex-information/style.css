@@ -22,7 +22,7 @@ img {
 }
 
 .plant-item {
-  max-width: 200px; /* apply maximum width for each plant item to follow */
+  max-width: 200px; /* apply maximum width for each plant item to follow - text will wrap if it reaches beyond that max-width */
 }
 
 /* do not edit this footer */
