@@ -20,9 +20,9 @@ body {
   width: 480px;
   border-radius: 10px;
   box-shadow: 2px 4px 16px rgba(0,0,0,.2);
-  padding: 15px; /* add space between edge of modal and content */
 
-  display: flex; /* flex items (icon and other contents) will align in a row */
+  padding: 15px; /* add space between edge of modal and content */
+  display: flex; /* flex items (icon and other contents) will align in a row -- icon will remain on left */
   gap: 15px; /* make gap same size as padding so there will be even space on both sides of icon */
 }
 
@@ -37,22 +37,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0; /* prevents icon from shrinking */
 }
 
-.contents-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* add some space between contents */
-}
-
-.close-container {
-  display: flex; /* header and close button will align in a row */
-  justify-content: space-between; /* pushes the close button to the far right; makes space between header & close button */
-}
-
+/* add basic header styling */
 .header {
   font-weight: 700;
   font-size: 20px;
+
+  display: flex; /* header text and and close button become a row */
+  justify-content: space-between; /* pushes close button to far right edge */
+  align-items: center; /* vertically aligns close button with the header */
+}
+
+.header, .text {
+  margin-bottom: 12px; /* adds space below header and paragraph */
 }
 
 .close-button {
@@ -66,6 +65,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 button {
