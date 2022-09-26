@@ -12,6 +12,24 @@ body {
   background: white;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 0 8px rgba(0,0,0,.1);
+
+  display: flex; /* overall flex container to align items (logo, links, etc.) in a row */
+  justify-content: space-between; /* pushes items apart by adding space in between flex items--items are now hugging sides of the header */ 
+  padding: 8px; /* add some space between edge of header and header elements */
+}
+
+.links {
+  display: flex; /* becomes its own flex container, aligns flex items (the list items/links) in a row by default */
+  gap: 16px; /* adds space between links */
+  margin: 0; /* get rid of default margin */
+  padding: 0; /* get rid of default padding */
+}
+
+.right-items,
+.left-items {
+  display: flex; /*becomes its own flex container, aligns flex items together in a row by default */
+  gap: 16px; /* adds space between the flex items/elements */
+  align-items: center; /* centers the flex items vertically */
 }
 
 .profile-image {
