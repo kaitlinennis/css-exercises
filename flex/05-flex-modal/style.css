@@ -20,6 +20,10 @@ body {
   width: 480px;
   border-radius: 10px;
   box-shadow: 2px 4px 16px rgba(0,0,0,.2);
+  padding: 15px; /* add space between edge of modal and content */
+
+  display: flex; /* flex items (icon and other contents) will align in a row */
+  gap: 15px; /* make gap same size as padding so there will be even space on both sides of icon */
 }
 
 .icon {
@@ -33,6 +37,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.contents-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* add some space between contents */
+}
+
+.close-container {
+  display: flex; /* header and close button will align in a row */
+  justify-content: space-between; /* pushes the close button to the far right; makes space between header & close button */
+}
+
+.header {
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .close-button {
