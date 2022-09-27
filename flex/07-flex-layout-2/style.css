@@ -2,27 +2,81 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   min-height: 100vh;
+
+   display: flex; /* becomes the overall flex container for page layout */
+   flex-direction: column; /* arrange all page sections in a column layout--footer can then be pushed to bottom */
 }
 
 .header {
   height: 72px;
   background: darkmagenta;
   color: white;
+
+  display: flex; /* make header its own container for individual alignment purposes */
+  align-items: center; /* vertically center header text */
+  padding-left: 16px; /* add horizontal space between left edge of header and text within */
+  font-weight: 900; /* style header text as bold */
+  font-size: 32px; /* make header text bigger */
 }
 
 .footer {
   height: 72px;
   background: #eee;
   color: darkmagenta;
+
+  display: flex; /* make footer its own container for individual alignment purposes */
+  justify-content: center; /* horizontally align footer text */
+  align-items: center; /* vertically align footer text */
 }
 
 .sidebar {
   width: 300px;
   background: royalblue;
+  padding: 16px; /* adds space between sidebar contents and edges */
+
+  /* Note: sidebar doesn't need to be a flex container, since it's a flex item of .row-align
+  and the flex-shrink property applies to flex items  */
+  flex-shrink: 0; /* prevents sidebar from shrinking (width will be 300px or greater) */
+}
+
+.sidebar ul {
+  list-style: none; /* removes bullets from list items */
+  margin: 0; /* remove default margin */
+  padding: 0; /* remove default padding */
+}
+
+.sidebar li {
+  margin-bottom: 16px; /* adds space between sidebar list items */
+}
+
+.sidebar a {
+  text-decoration: none; /* removes default underline */
+  color: white; /* replaces default blue with white */
+  font-size: 24px; /* makes link text bigger */
 }
 
 .card {
   border: 1px solid #eee;
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
+
+  /* Note: card doesn't need a custom height, as it will stretch vertically to fill available space (see .row-align) */
+  
+  width: 300px; /* give each card a custom width (so cards know when to wrap) */
+  padding: 16px; /* add space between edges of card and text within */
+  margin: 16px; /* push cards away from each other by 16px */
+}
+
+.row-align {
+  display: flex; /* aligns sidebar and card container side-by-side */
+  flex: 1; /* allows sidebar and cards to grow and take up available space--sidebar stretches to bottom of page by default */
+}
+
+.card-container {
+  display: flex; /* displays all cards in a row, stretches vertically by default */
+  /*align-items: center; /* replaces default value (stretch) to vertically center card items */
+
+  /**** gap: 30px; /* adds space between each card */
+  flex-wrap: wrap; /* allows cards to wrap onto the next line if more space is needed */
+  padding: 32px; /* add space between edges of card container and the cards within */
 }
