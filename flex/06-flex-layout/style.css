@@ -5,6 +5,12 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: Roboto, sans-serif;
+
+  display: flex; /* body becomes an entire flex container for the overall layout */
+  flex-direction: column; /* change default direction (row) to column) */
+
+  /* Method #2 of pushing footer to bottom (instead of using flex: 1)--add even space between each page section, pushing footer to the bottom */
+  /*justify-content: space-between; */ 
 }
 
 img {
@@ -16,6 +22,7 @@ button {
   border: none;
   border-radius: 8px;
   background: #eee;
+  padding: 8px 16px; /* adds space between edges of button and content within */
 }
 
 input {
@@ -24,4 +31,35 @@ input {
   padding: 8px 24px;
   width: 400px;
   margin-bottom: 16px;
+}
+
+.content {
+  display: flex; /* becomes its own flex container for individual layout/alignment */
+  flex: 1; /* content will grow to fill available space, pushing footer to the bottom */
+  flex-direction: column; /* replace default value (row) with column */
+  align-items: center; /* centers all our content items along the cross axis (horizontally--since our cross axis now runs in the inline direction) */
+  justify-content: center; /* centers content items vertically */
+}
+
+ul {
+  margin: 0; /* removes default margin */
+  padding: 0; /* removes default padding */
+  list-style: none; /* removes bullets from all list items */
+  display: flex; /* places the link groups in their own rows so they sit side-by-side*/
+  gap: 16px; /* adds gap between adjacent links */
+}
+
+li a {
+  text-decoration: none; /* removes underlines from all list-item links */
+  color: #666; /* replace the default link color (blue) with gray */
+}
+
+.header, .footer {
+  display: flex; /* places all header sections (left and right links) in a single row by default--does the same for footer */
+  justify-content: space-between; /* pushes link sections (left and right links) to sides of body, adds even space in between */
+  padding: 16px; /* add space to separate header (or footer) content from the edges */
+}
+
+.footer {
+  background-color: #eeeeee; /* add background color footer */
 }
